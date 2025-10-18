@@ -1,0 +1,65 @@
+{
+  "my_coin": {
+    "fileFormatVersion": 6,
+    "address": "0xe88a25db1dc7d445962d1b6b13b649f2f9f38e178a49b21986616e058cd4617e",
+    "name": "my_coin",
+    "friends": [],
+    "structs": {
+      "MY_COIN": {
+        "abilities": {
+          "abilities": [
+            "Drop"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "dummy_field",
+            "type": "Bool"
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "mint": {
+        "visibility": "Public",
+        "isEntry": true,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "coin",
+                "name": "TreasuryCap",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0xe88a25db1dc7d445962d1b6b13b649f2f9f38e178a49b21986616e058cd4617e",
+                      "module": "my_coin",
+                      "name": "MY_COIN",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "U64",
+          "Address",
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      }
+    }
+  }
+}
